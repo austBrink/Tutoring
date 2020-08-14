@@ -19,11 +19,6 @@
 # Enter your name here print)
 
 
-
-
-
-
-
 print("Please enter your name")
 yourName=input().strip() # to save the user password 
 print("now enter password")
