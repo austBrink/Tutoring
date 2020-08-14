@@ -12,11 +12,17 @@
 # 6) Now as a test, print() the username and the userpassword 
 
 
-# Later we will build a login function that will check and see if an entered username and password match these ones you just coded in! :) So stay tuned. 
+# Later we will build a login function that will check and see if an entered username and password match these ones you just coded in! :) So stay tuned........ 
 
 
 # Happy coding
 # Enter your name here print)
+
+
+
+
+
+
 
 print("Please enter your name")
 yourName=input().strip() # to save the user password 
@@ -42,7 +48,6 @@ while(loggedOut==True):
       print("nope your password didnt match")
   else:
     print("nope inccorect user name") 
-
 
 
 
