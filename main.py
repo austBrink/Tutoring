@@ -1,54 +1,129 @@
-import pickle
+import pickle 
+TRED =  '\033[31m' # Green Text
+TWHITE = '\033[37m'
+class profile:
+    def __init__(self, name, password):
+        self.name = name 
+        self.password = password
+    
+    def getName(self):
+        return self.name
+    
+    def isPassword(self, attmpt):
+        if(attmpt == self.password):
+            return True
+        else:
+            return False
+    
+    def setPassword(self, oldPassword, newPassword):
+        if (oldPassword == self.password):
+            self.password = newPassword
+            return 0 
+        else:
+            return -1 
 
-username = ""
-password = ""
-prevUser = False
-loggedIn = False 
-def menuPrint():
-  print("WELCOME TO THE PROGRAM")
-  print("ENTER ONE OF THE VALID CHOICES")
-  print("create: to create new account")
-  print("login: to enter credentials and login")
-  print("cars: to use the car dictionary")
-  print("Q: to quit")
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+def printMenu():
+    print("Welcome to this dictionary!")
+    print("choose an option:")
+    print("enter S to use the dictionary")
+    print("enter L for log in")
+    print("don't have a profile? make one now by pressing M!")
+    print("enter Q to quit")
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-def loadProfile():
-  try:
-    with open('profile_data','rb') as output:
-      global username = pickle.load(output)
-      global password = pickle.load(output)
-  except:
-    print("looks like your new to the car dictionary program: create an account to get started!")
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-def createAccount(name, passcode):
-  global username = name
-  global password = passcode
-  with open('profile_data','rb') as output:
-    pickle.dump(username)
-    pickle.dump(password)
-  global prevUser = True 
-  
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# need to make this uncallable if logged in.... 
+# also need to figure out how to make multiple log ins eventaully?? 
+def createProfile(name, passwird):
+    newProfile = profile(name, passwird)
+    #pickle the profile....
+    with open('profile_data', 'wb') as output:
+        pickle.dump(newProfile, output, pickle.HIGHEST_PROTOCOL)
+        pickle.dump(newProfile, output, pickle.HIGHEST_PROTOCOL)
+    return newProfile
+
+
+def login():
+    profileThere = False
+    try:
+        with open('profile_data','rb') as readIn:
+            validProfile = pickle.load(readIn)
+            profileThere = True
+    except:
+        print(TRED + "FILE ERROR", TWHITE)
+    if(profileThere):
+        fail = True
+        while(fail):
+            print("LOG IN:")
+            print("____________________________")
+            name = input("USERNAME -->>").strip()
+            password= input("\t PASSWORD -->>").strip()
+            if(name == validProfile.getName() and validProfile.isPassword(password)):
+                fail = False
+                return validProfile
+            else:
+                print (TRED + "UserName and or Password do not match!" , TWHITE)
+    return None
+
+# this is homework assignment part one. Go ahead and add cars to the dictionary. Remember first enter a comma, then the car name, then the ":" symbol followed by the definition of the car. 
+def dictionary():
+  myCars = {"Ford F150":"Mid sized pickup truck", "Honda Civic":"small sporty coup....enough for a good squad of people","Jeep CJ":"The old school classic jeep", "Lamborghini SV":"really cool engine and interior... awesome sound!...details and texture!", "Aston Martin":"..not a huge fan.... I also cant spell today", "Ferrari 812superfast":"A 12 cylinder monster", "Tesla":"Cool stuff"}
+  print("enter a car")
+  userInput = input().strip()
+
+  if(userInput in myCars):
+      print(myCars[userInput])
+  else:
+      print("sorry, we didn't find " + userInput + " in the car dictionary")
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+#MAIN PROGRAM 
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+#call the printMenu function and he'll get to work. 
+printMenu()
+
+# main menu functionality 
 userChoice = ""
-
-
-while (userChoice!= "Q"):
-
-  if(userChoice == "login"):
-    loadProfile()
-    if(loggedIn==False and prevUser == True):
-      while(global loggedIn == False):
-        name = input("NAME:")
-        word = input("PASSWORD:")
-        if(name == global username and word == global password):
-          print("Hello, " + name)
-          global loggedIn = True
-      
-  elif(userChoice == "create"):
-    if(global prevUser == False):
-      global username = input("NAME:")
-      global password = input("PASSWORD:")
-
-  elif(userChoice == "cars"):
-    if(global loggedIn == True):
-      print("Coming soon")
-
+userProfile = None
+while(userChoice!="Q"):
+    userChoice = input("\t-->>")
+    #User chose to start the / a  Game...
+    if(userChoice == "S"):
+        if(userProfile!=None):
+            print("Hello, " + userProfile.getName() + "!")
+            dictionary()
+        else:
+            print("You must login or signup to show that")
+    #user wnats to log in 
+    elif(userChoice=="L"):
+        userProfile = login()
+        if(userProfile != None):
+          print("Welcome, " + userProfile.getName() + "!")
+        else:
+          print("Need to create a profile to get started")
+        pass 
+    elif(userChoice == "M"):
+        # 1) notify
+        # 2) ask for name 
+        # 3) ask for passwrod
+        # 4) pass to the create function... 
+        if(userProfile == None):
+            print("CREATE A PASSWORD")
+            print("Enter your player name:")
+            userName = input().strip()
+            print("Choose a password")
+            passWord = input().strip()
+            userProfile = createProfile(userName,passWord)
+    #lets go. nothing here for now... 
+    #This will be where you enter the code for Homework part two. output a message to the user saying goodbye or something. 
+    elif(userChoice == "Q"):
+        pass 
