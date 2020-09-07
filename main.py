@@ -1,4 +1,6 @@
 import pickle 
+# global variable  
+
 TRED =  '\033[31m' # Green Text
 TWHITE = '\033[37m'
 class profile:
@@ -34,7 +36,6 @@ def printMenu():
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # need to make this uncallable if logged in.... 
 # also need to figure out how to make multiple log ins eventaully?? 
@@ -47,7 +48,8 @@ def createProfile(name, passwird):
     return newProfile
 
 
-def login():
+def login(loggedIn):
+    loggedIn = True
     profileThere = False
     try:
         with open('profile_data','rb') as readIn:
@@ -71,14 +73,17 @@ def login():
 
 # this is homework assignment part one. Go ahead and add cars to the dictionary. Remember first enter a comma, then the car name, then the ":" symbol followed by the definition of the car. 
 def dictionary():
-  myCars = {"Ford F150":"Mid sized pickup truck", "Honda Civic":"small sporty coup....enough for a good squad of people","Jeep CJ":"The old school classic jeep", "Lamborghini SV":"really cool engine and interior... awesome sound!...details and texture!", "Aston Martin":"..not a huge fan.... I also cant spell today", "Ferrari 812superfast":"A 12 cylinder monster", "Tesla":"Cool stuff"}
-  print("enter a car")
-  userInput = input().strip()
 
-  if(userInput in myCars):
-      print(myCars[userInput])
-  else:
-      print("sorry, we didn't find " + userInput + " in the car dictionary")
+  myCars = {"Ford F150":"Mid sized pickup truck", "Honda Civic":"small sporty coup....enough for a good squad of people","Jeep CJ":"The old school classic jeep", "Lamborghini SV":"really cool engine and interior... awesome sound!...details and texture!", "Aston Martin":"..not a huge fan.... I also cant spell today", "Ferrari 812superfast":"A 12 cylinder monster", "Tesla":"Cool stuff", "57 Chevy": "classic Car", "Mclauren 720s":"really cool and fast"}
+
+  userInput = ""
+  while(userInput != "Q"):
+    print("enter a car")
+    userInput=input().strip() 
+    if(userInput in myCars):
+        print(myCars[userInput])
+    else:
+        print("sorry, we didn't find " + userInput + " in the car dictionary")
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -89,8 +94,8 @@ def dictionary():
 # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 #call the printMenu function and he'll get to work. 
+loggedIn = False
 printMenu()
-
 # main menu functionality 
 userChoice = ""
 userProfile = None
@@ -105,19 +110,23 @@ while(userChoice!="Q"):
             print("You must login or signup to show that")
     #user wnats to log in 
     elif(userChoice=="L"):
-        userProfile = login()
-        if(userProfile != None):
-          print("Welcome, " + userProfile.getName() + "!")
-        else:
-          print("Need to create a profile to get started")
-        pass 
+        if(loggedIn == False):
+            userProfile = login(loggedIn)
+            if(userProfile != None):
+                print("Welcome, " + userProfile.getName() + "!")
+            else:
+                print("Need to create a profile to get started")
+            pass 
+        elif(loggedIn == True):
+            print("You are already logged in")
+
     elif(userChoice == "M"):
         # 1) notify
         # 2) ask for name 
         # 3) ask for passwrod
         # 4) pass to the create function... 
         if(userProfile == None):
-            print("CREATE A PASSWORD")
+            print("CREATE A USER")
             print("Enter your player name:")
             userName = input().strip()
             print("Choose a password")
@@ -126,4 +135,4 @@ while(userChoice!="Q"):
     #lets go. nothing here for now... 
     #This will be where you enter the code for Homework part two. output a message to the user saying goodbye or something. 
     elif(userChoice == "Q"):
-        pass 
+        print("Have a good weekend!")
