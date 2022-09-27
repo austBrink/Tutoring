@@ -1,0 +1,16 @@
+
+Professor, 
+
+Was getting started on program 7. After analyzing the program specs I have some questions before I proceed. 
+
+1) The program spec for display shows saleperson ID's. We are not provided this in any of the .dat files. Should I create ID numbers for the names listed ie kurt = 101?? or shall I replace the ID numbers pictured with the salesperson names. 
+
+2) in the numbers.dat file I see that we have 9 data entries. While the names-numbers.dat file maps salespeople to the sales values in numbers.dat there would be no assignmnets for the last 3 entries? Am I to assume these are extra/irrelevant data? 
+
+
+3) Assuming no assignments for the extra 3 data in numbers.dat I am left with the conclusion that there is only one sale per salesperson. That gives me no way to find total sales person that in implied in the picture of exceptable or expected output.
+
+
+Standing by, Thank you,
+
+Emily 

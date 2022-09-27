@@ -1,0 +1,6 @@
+Kurt 10000.00
+Russell 12000.00
+Harrison 5000.00
+Morgan 14000.00
+Angelina 18000.00
+John 12500.00

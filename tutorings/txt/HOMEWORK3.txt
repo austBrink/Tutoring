@@ -1,0 +1,36 @@
+HEY EDWARD! 
+
+Here's this weeks homework I've got 4 parts for you to complete. 
+
+PART ONE: DONE!!!! 
+
+    WHAT TO DO:
+        Go to line 74 where the myCars dictionary lives. Add cars and deifnitions to the dictionary. 
+    HOW TO DO IT:
+        To add an entry to the dictionary. go to the last entry right before the } bracket. enter a comman, then a name of a car, followed by a ":" symbol, then the definition of the car. retpeat the whole process for another car entry to the dictionary! Goodluck; excited to see what new cars will be there! :) 
+
+PART TWO: DONE!!
+    WHAT TO DO:
+        go to line 128 and change the task for userinput == Q to be a nice goodby to to the user. 
+    HOW TO DO IT:
+        replace the keyword "pass" with the right function that python uses to output to the screen (print) and inside the parenthesis on print() write a nice message in quotes....
+        example:
+            print("see ya later")
+
+CODE SCAVENGER HUNT!!!!!!!
+
+1) count how many "Functions there are" 
+hint: all functions begin with the word "def"
+
+ANSWER GOES HERE: seven functions 
+
+2) count how many times you see the word "pickle" based on what you know about python take a guess at what "pickling" does. 
+hint: you are allowed to look this up online... 
+
+ANSWER GOES HERE: four ticklish pickles 
+
+3) count how many times we ask the user for data. 
+Hint: anytime we ask the user for data or get data from the user we use a python function called input() 
+
+ANSWER GOES HERE: 6 times 
+
