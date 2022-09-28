@@ -1,7 +1,7 @@
 #include <iostream>
 int numberOfStudents = 0;
 std::string studentNames[25] = {""};
-int main() {
+int mains() {
   do {
     std::cout << "please enter a valid number of students (1-25)" << std::endl;
     std::cin >> numberOfStudents;
@@ -22,6 +22,7 @@ int main() {
   // now we must sort student names.
   // if .compare returns < 0 that means the second string is lexiconically less than the first string.
   // claim the first student name is the smallest.
+
   std::string first = studentNames[0];
   for(int i = 0; i <numberOfStudents; i++){
     if(studentNames[i].compare(first) < 0){
