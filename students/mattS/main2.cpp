@@ -3,7 +3,7 @@
 // function declarations...
 double yearPopulation (double populationInit, double bRate, double dRate);
 double getPopulationAfterXYears (int years, double populationInit, double bRate, double dRate);
-double getPopulation (int a, int b, double populationInit, double bRate, double dRate);
+double getPopulationAfterXYearsRecursive (int a, int b, double populationInit, double bRate, double dRate);
 void print(std::string val);
 void print(double val);
 
@@ -34,7 +34,7 @@ int main() {
     } while (years < 1);
     
     print(getPopulationAfterXYears(years, population, birth, death));
-    print(getPopulation(1, years, population, birth, death));
+    print(getPopulationAfterXYearsRecursive(1, years, population, birth, death));
 }
 
 double getPopulationAfterXYears (int years, double populationInit, double bRate, double dRate){
@@ -45,11 +45,11 @@ double getPopulationAfterXYears (int years, double populationInit, double bRate,
     return pop;
 }
 
-double getPopulation (int a, int b, double populationInit, double bRate, double dRate ) {
+double getPopulationAfterXYearsRecursive (int a, int b, double populationInit, double bRate, double dRate ) {
     if (b < a) {
         return populationInit;
     }
-    return getPopulation (a + 1, b, yearPopulation(populationInit, bRate, dRate), bRate, dRate);    
+    return getPopulationAfterXYearsRecursive(a + 1, b, yearPopulation(populationInit, bRate, dRate), bRate, dRate);    
 }
 
 double yearPopulation (double populationInit, double bRate, double dRate){
