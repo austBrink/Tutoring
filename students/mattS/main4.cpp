@@ -12,7 +12,6 @@ void selectionSort(int n);
 int myArray[] = {23,17,5,90,12,44,38,84,77,3,66,55,1,19,37,88,8,97,25,50,75,61,49};
 int main () {
     
-   
 
     //output 1 or 6
     std::cout << "This is output 1 or 6" <<std::endl;

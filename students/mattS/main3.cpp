@@ -43,9 +43,20 @@ int main () {
     printArray(array2D,2,5);
     print(getTotal(array2D,2,5));
     print(getAverage(array2D,2,5));
+
     print(getRowTotal(array2D,0,5));
+    print(getRowTotal(array2D,1,5));
+
+    print(getColumnTotal(array2D,2,0));
     print(getColumnTotal(array2D,2,1));
+    print(getColumnTotal(array2D,2,2));
+    print(getColumnTotal(array2D,2,3));
+    print(getColumnTotal(array2D,2,4));
+
     print(getHighestInRow(array2D,0,5));
+    print(getHighestInRow(array2D,1,5));
+
+    print(getLowestInRow(array2D,0,5));
     print(getLowestInRow(array2D,1,5));
 
 
@@ -54,7 +65,7 @@ int main () {
 
 int getTotal(int arr[][5], int row, int column){
     int sum = 0;
-    for(int i = 0; i < row; i++) {
+    for (int i = 0; i < row; i++) {
         for(int j = 0; j < column; j++) {
             sum = sum + arr[i][j];
         }
