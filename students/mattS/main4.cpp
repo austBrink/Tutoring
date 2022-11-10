@@ -1,8 +1,7 @@
 #include <iostream>
 
-
 void printArray(int a[]);
-int find(int a[], int thingToFind);
+int linearSearch(int a[], int thingToFind);
 void outPut2 (int a[]);
 int findAndCount (int a[], int thingToFind);
 void outPut3 (int a[]);
@@ -19,16 +18,22 @@ int globalSearchCount = 0;
 int main () {
     
 
-    //output 1 or 6
+    // output 1 or 6
     std::cout << "This is output 1 of 6:" <<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;
     printArray(myArray);
+    std::cout << std::endl;
 
+    // output 2 or 6
     outPut2(myArray);
 
+    // output 3 of 6 
     outPut3(myArray);
 
+    // output 4 of 6 
     output4();
 
+    // ....
     output5();
 
     output6();
@@ -36,15 +41,15 @@ int main () {
     return 0;
 };
 
-void printArray(int a[]) {
-    
-    for(int i = 0; i<23; i++){
-        std::cout<< a[i] << std::endl;
+void printArray(int a[]) {  
+    for (int i = 0; i<23; i++) {
+        std::cout<< a[i];    
     }
+    std::cout << std::endl;
 }
 
-// lineaer search
-int find (int a[], int thingToFind) {
+// linear search
+int linearSearch (int a[], int thingToFind) {
     for(int i = 0; i<23; i++) {
         if(thingToFind == a[i]) {
             return i+1;
@@ -65,30 +70,36 @@ int findAndCount (int a[], int thingToFind) {
     return count;
 }
 
-// 25, 30, 50, 75, and 92
+// need to find ... 25, 30, 50, 75, and 92
 void outPut2 (int a[]) {
-    std::cout<<"output 2 of 6:"<<std::endl;
-    std::cout<<find(a,25)<<std::endl;
-    std::cout<<find(a,30)<<std::endl;
-    std::cout<<find(a,50)<<std::endl;
-    std::cout<<find(a,75)<<std::endl;
-    std::cout<<find(a,92)<<std::endl;
+    std::cout<<"this is output 2 of 6:"<<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;          std::cout<<linearSearch(a,25)<<", ";
+    std::cout<<linearSearch(a,30)<<", ";
+    std::cout<<linearSearch(a,50)<<", ";
+    std::cout<<linearSearch(a,75)<<", ";
+    std::cout<<linearSearch(a,92);
+    std::cout<<std::endl<<std::endl;
 }
 
 void outPut3 (int a[]) {
-    std::cout<<"output 3 of 6"<<std::endl;
-    std::cout<<findAndCount(a,25)<<std::endl;
-    std::cout<<findAndCount(a,30)<<std::endl;
-    std::cout<<findAndCount(a,50)<<std::endl;
-    std::cout<<findAndCount(a,75)<<std::endl;
-    std::cout<<findAndCount(a,92)<<std::endl;
+    std::cout<<"this is output 3 of 6"<<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;  
+    std::cout<<findAndCount(a,25)<<", ";
+    std::cout<<findAndCount(a,30)<<", ";
+    std::cout<<findAndCount(a,50)<<", ";
+    std::cout<<findAndCount(a,75)<<", ";
+    std::cout<<findAndCount(a,92)<<", ";
+    std::cout<<std::endl<<std::endl;
 }
 
 // sort our array and ready it for binary search. 
 void output4 (){
+    // use selection sort to sort the array
     selectionSort(23);
-    std::cout << "This is output 4 of 6" <<std::endl;
+    std::cout << "this is output 4 of 6" <<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;  
     printArray(myArray);
+    std::cout<<std::end;
 }
 
 // selection sort came from https://www.geeksforgeeks.org/selection-sort/
@@ -156,14 +167,15 @@ void doBinarySearch(int arr[], int l, int r, int x) {
     if (found == -1) {
         std::cout<< x << " not found in array. searched " << binarySearchCount << " times"<<std::endl;
     } else {
-        std::cout<< x << " was found at " << found << " searched " << binarySearchCount << " times." << std::endl;
+        std::cout<< x << " was found at " << found << " searched " << binarySearchCount << " times" << std::endl;
     }
    
 }
 
 void output5() {
     // 25, 30, 50, 75, and 92.
-    std::cout<<"Output 5 of 6:"<<std::endl;
+    std::cout<<"this is output 5 of 6:"<<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;  
     doBinarySearch(myArray, 0, 22, 25);
     globalSearchCount += binarySearchCount;
     binarySearchCount = 0;
@@ -178,9 +190,12 @@ void output5() {
     binarySearchCount = 0;
     doBinarySearch(myArray, 0, 22, 92);
     globalSearchCount += binarySearchCount;
+    std::cout<<std::endl<<std::endl;
 }
 
 void output6() {
-    std::cout<<"Output 6 of 6:" <<std::endl;
-    std::cout<<"The total search count was "<<globalSearchCount << std::endl;
+    std::cout<<"this is output 6 of 6:" <<std::endl;
+    std::cout << "-----------------------------------------" << std::endl;  
+    std::cout<<"The total search count was: "<< globalSearchCount << std::endl;
+    std::cout<<std::endl<<std::endl;
 }
