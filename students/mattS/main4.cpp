@@ -1,5 +1,6 @@
 #include <iostream>
 
+// function declarations
 void printArray(int a[]);
 int linearSearch(int a[], int thingToFind);
 void outPut2 (int a[]);
@@ -11,26 +12,24 @@ int binarySearch(int arr[], int l, int r, int x);
 void output5();
 void output6();
 
-
-int myArray[] = {23,17,5,90,12,44,38,84,77,3,66,55,1,19,37,88,8,97,25,50,75,61,49};
+int myArray[] = { 23,17,5,90,12,44,38,84,77,3,66,55,1,19,37,88,8,97,25,50,75,61,49 };
 int binarySearchCount = 0;
 int globalSearchCount = 0;
-int main () {
-    
 
-    // output 1 or 6
+int main () {
+    // output 1 or 6 print unsorted array 
     std::cout << "This is output 1 of 6:" <<std::endl;
     std::cout << "-----------------------------------------" << std::endl;
     printArray(myArray);
     std::cout << std::endl;
 
-    // output 2 or 6
+    // output 2 or 6. Print each linear search
     outPut2(myArray);
 
-    // output 3 of 6 
+    // output 3 of 6 Print each linear search with a count 
     outPut3(myArray);
 
-    // output 4 of 6 
+    // output 4 of 6, sort the array and show 
     output4();
 
     // ....
@@ -52,6 +51,7 @@ void printArray(int a[]) {
 int linearSearch (int a[], int thingToFind) {
     for(int i = 0; i<23; i++) {
         if(thingToFind == a[i]) {
+            // instead of 0 index say 1...
             return i+1;
         }
     }
@@ -99,7 +99,7 @@ void output4 (){
     std::cout << "this is output 4 of 6" <<std::endl;
     std::cout << "-----------------------------------------" << std::endl;  
     printArray(myArray);
-    std::cout<<std::end;
+    std::cout<<std::endl;
 }
 
 // selection sort came from https://www.geeksforgeeks.org/selection-sort/
@@ -110,7 +110,7 @@ void swap(int *xp, int *yp)
     *yp = temp;
 }
  
-void selectionSort(int n)
+void selectionSort (int n)
 {
     int i, j, min_idx;
  
@@ -140,6 +140,7 @@ void selectionSort(int n)
 int binarySearch(int arr[], int l, int r, int x)
 {
     while (l <= r) {
+        // we added the count to show how many iterations of binary search we needed. 
         binarySearchCount ++;
         int m = l + (r - l) / 2;
  
@@ -169,7 +170,6 @@ void doBinarySearch(int arr[], int l, int r, int x) {
     } else {
         std::cout<< x << " was found at " << found << " searched " << binarySearchCount << " times" << std::endl;
     }
-   
 }
 
 void output5() {
