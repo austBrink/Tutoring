@@ -78,6 +78,8 @@ int main() {
 
   printArray(scoresWithDrop, SIZE - 1);
 
+  print(getAverage(scoresWithDrop, SIZE-1), true);
+
   // now we need the scores from the user.
   // use the getUserInteger function to store scores in array....
 }
