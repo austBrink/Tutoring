@@ -60,7 +60,7 @@ void upper(std::string *s){
     }
 }
 
-void lower(std::string *s){
+void lower (std::string *s) {
     std::string::iterator si;
     for(si = s->begin(); si < s->end(); si++){
         *si = tolower(*si);
