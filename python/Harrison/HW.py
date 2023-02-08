@@ -18,7 +18,6 @@ totalSlices = FAMILY_SIZE * SLICES_PER_PERSON
 numberOfPizzas =  math.ceil(totalSlices / SLICES_PER_PIZZA) 
 
 # recipe
-
 CUPS_OF_SUGAR = 1
 CUPS_OF_FLOUR = 2
 CUPS_OF_BUTTER = 1
@@ -29,7 +28,6 @@ TOTAL_COOKIES_RECIPE_MAKES = 48
 SUGAR_UNIT = CUPS_OF_SUGAR / TOTAL_COOKIES_RECIPE_MAKES
 FLOUR_UNIT = CUPS_OF_FLOUR / TOTAL_COOKIES_RECIPE_MAKES
 BUTTER_UNIT = CUPS_OF_BUTTER / TOTAL_COOKIES_RECIPE_MAKES
-
 
 # get how many cookies to make from the user
 print('ENTER THE NUMBER OF COOKIES')
@@ -45,9 +43,4 @@ print(FLOUR_UNIT * userCookies)
 
 print('CUPS OF BUTTER: ')
 print(BUTTER_UNIT * userCookies)
-
-
-
-
-
 
