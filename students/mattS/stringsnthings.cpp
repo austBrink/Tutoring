@@ -42,7 +42,6 @@ int main (void) {
     lower(myString);
     print(myString);
 
-    
     return 0;
 }
 

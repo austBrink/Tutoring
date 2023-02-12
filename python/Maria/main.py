@@ -3,7 +3,7 @@
 # print("Hello, World!")
 
 # # variables and types...
-# myNumber = 3 
+# myNumber = 3
 # myString = "This is a STRING in python"
 # myFloat = 3.8
 
