@@ -5,7 +5,7 @@ students = 24
 
 studentsPerParent = 4 
 
-#we want to know how many students will NOT have a ride. Well, how many WILL? 
+# we want to know how many students will NOT have a ride. Well, how many WILL? 
 
 studentsWithRide = parents * studentsPerParent
 

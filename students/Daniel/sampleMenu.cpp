@@ -2,7 +2,7 @@
 
 int main () {
    std::cout <<"LOOP PROGRAM"<< std::endl;
-   
+
    // create a program that opens and stays running while the user input is not Q. 
    // there will be a menu display, with an option to print an array to the screen. 
 
@@ -17,7 +17,7 @@ int main () {
     if(userChoice == 'P') {
         // print an array 
         for(int i = 0; i < 7; i++){
-            std::cout<<myArray[i]<<std::endl;
+            std::cout<< myArray[i] <<std::endl;
         }
     }
    }
