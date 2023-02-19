@@ -1,8 +1,6 @@
 
 #creating dictionaries to relate keys and definitions to map classes to rooms, instructors, and times.... 
-
 #plan: use data input to ask for definitions....
-
 
 print("welcome to the class dictionary")
 
