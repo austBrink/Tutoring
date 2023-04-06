@@ -1,8 +1,8 @@
 # Hit the Target Game
-#02/11/23
-#Maria Harrison
+# 02/11/23
+# Maria Harrison
 import turtle
-#named constants
+# named constants
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 600
 TARGET_LLEFT_X = 100

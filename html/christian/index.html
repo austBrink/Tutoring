@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<style>
+			.sOne {
+				padding: 20px;
+				border: 1px solid grey;
+			}
+			.area {
+				cursor: pointer;
+			}
+			#c {
+				z-index: 1;
+			}
+		</style>
+		<!--x,y,radius-->
+		<map name = "myMap">
+			<area
+				id = 'c'
+				class = "area"
+				shape="circle"
+				coords="410,285,253"
+				href="https://github.com/"
+				target="_blank"
+				alt="CSS" 
+			/>
+			<area
+				class = "area"
+				shape="rect"
+				coords="0,0,954,621"
+				href="https://www.linkedin.com/"
+				target="_blank"
+				alt="CSS" 
+			/>
+		</map>
+	</head>
+	<body>
+		<section class = "sOne">
+			<div class = "">
+				<p> Hello World</p>
+			</div>
+		</section>
+		<section class = "sOne">
+			<img 
+				usemap = "#myMap"
+				src = "octocat.jpeg"
+			>
+		</section>
+	</body>
+</html>
