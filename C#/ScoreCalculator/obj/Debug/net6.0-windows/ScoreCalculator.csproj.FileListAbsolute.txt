@@ -1,0 +1,16 @@
+C:\Users\ryanb\source\repos\ScoreCalculator\bin\Debug\net6.0-windows\ScoreCalculator.exe
+C:\Users\ryanb\source\repos\ScoreCalculator\bin\Debug\net6.0-windows\ScoreCalculator.deps.json
+C:\Users\ryanb\source\repos\ScoreCalculator\bin\Debug\net6.0-windows\ScoreCalculator.runtimeconfig.json
+C:\Users\ryanb\source\repos\ScoreCalculator\bin\Debug\net6.0-windows\ScoreCalculator.dll
+C:\Users\ryanb\source\repos\ScoreCalculator\bin\Debug\net6.0-windows\ScoreCalculator.pdb
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.Form1.resources
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.csproj.GenerateResource.cache
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.AssemblyInfoInputs.cache
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.AssemblyInfo.cs
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.csproj.CoreCompileInputs.cache
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.dll
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\refint\ScoreCalculator.dll
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.pdb
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ScoreCalculator.genruntimeconfig.cache
+C:\Users\ryanb\source\repos\ScoreCalculator\obj\Debug\net6.0-windows\ref\ScoreCalculator.dll
